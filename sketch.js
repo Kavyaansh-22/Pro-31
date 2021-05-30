@@ -8,6 +8,12 @@ var plinkos = [];
 var divisions =[];
 var divisionHeight=300;
 var score =0;
+
+function preload() {
+
+}
+
+
 function setup() {
   createCanvas(800, 800);
   engine = Engine.create();
@@ -15,6 +21,7 @@ function setup() {
   ground = new Ground(width/2,height,width,20);
 
   //create division objects
+ 
   for (var k = 0; k <=80; k = k + 80) {
     divisions.push(new Divisions(k, height-divisionHeight/2, 10, divisionHeight));
   }
@@ -103,8 +110,8 @@ function draw() {
   if (frameCount%60===0) {
     particles.push( new Particle (random(width/2-10, width/2+10) , 10,10))
     
+    
   }
-  
-
- 
+  particles.display();
 }
+
